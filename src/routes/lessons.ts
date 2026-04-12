@@ -304,4 +304,5 @@ function slugify(text: string): string {
     .slice(0, 60);
 }
 
+export { app as lessons };
 export default app;

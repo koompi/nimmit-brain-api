@@ -18,6 +18,15 @@ app.use(
 );
 app.use("/api/v1/*", rateLimit);
 
+// Reject oversized bodies before they burn CPU
+app.use("/api/v1/*", async (c, next) => {
+  const contentLength = c.req.header("content-length");
+  if (contentLength && parseInt(contentLength, 10) > 64_000) {
+    return c.json({ error: "Payload too large" }, 413);
+  }
+  await next();
+});
+
 // Routes
 app.route("/api/v1/brain", lessons);
 
