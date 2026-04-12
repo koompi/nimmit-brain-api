@@ -63,7 +63,7 @@ async function getKeysData(token: string): Promise<{ keys: Record<string, KeyEnt
   );
   if (!res.ok) return { keys: {}, sha: "" };
   const data = await res.json();
-  const content = Buffer.from(data.content, "base64").toString("utf-8");
+  const content = atob(data.content.replace(/\n/g, ""));
   return { keys: JSON.parse(content), sha: data.sha };
 }
 
@@ -72,7 +72,7 @@ async function saveKeysData(token: string, keys: Record<string, KeyEntry>): Prom
   const content = JSON.stringify(keys, null, 2);
   const body: any = {
     message: `chore: update key store (${Object.keys(keys).length} instances)`,
-    content: Buffer.from(content).toString("base64"),
+    content: btoa(unescape(encodeURIComponent(content))),
   };
   if (sha) body.sha = sha;
   const res = await fetch(
@@ -349,7 +349,7 @@ async function fetchApprovedLessons(token: string, since?: string) {
       );
       if (cRes.ok) {
         const data = await cRes.json();
-        lessons.push({ path: file.filename, content: Buffer.from(data.content, "base64").toString("utf-8"), date: commit.commit.author.date });
+        lessons.push({ path: file.filename, content: atob(data.content.replace(/\n/g, "")), date: commit.commit.author.date });
       }
     }
   }
