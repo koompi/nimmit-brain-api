@@ -3,10 +3,10 @@
     "instanceId": "nimmit-security-test",
     "brainVersion": "2.1.0",
     "createdAt": "2026-04-12T09:01:43.981Z",
-    "lessonCount": 0,
-    "weeklyLessonCount": 0,
-    "weeklyResetAt": "2026-04-12T09:01:46.073Z",
-    "lastSubmit": null,
+    "lessonCount": 1,
+    "weeklyLessonCount": 1,
+    "weeklyResetAt": "2026-04-19T09:02:17.104Z",
+    "lastSubmit": "2026-04-12T09:02:17.104Z",
     "banned": false,
     "keyHash": "e2dba52b233e027358915daa6211e502722d1bd1bb006181da7654a5981bfaad"
   }
