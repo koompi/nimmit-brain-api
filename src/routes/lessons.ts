@@ -283,15 +283,13 @@ app.post("/lessons", async (c) => {
         await saveKeysData(env.GITHUB_TOKEN, keys);
       }
 
-      const resp = c.json({
+      return c.json({
         status: "quarantined",
         lessonsReceived: body.lessons.length,
         instanceId: keyEntry.instanceId,
         pr: result.prUrl,
         note: "Lessons quarantined for review. They will NOT activate until approved.",
-      }, 201);
-      resp.header("X-Instance-Status", status);
-      return resp;
+      }, 201, { "X-Instance-Status": status });
     } catch (err) {
       return c.json({ error: "GitHub sync failed", details: String(err) }, 500);
     }
