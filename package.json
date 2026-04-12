@@ -1,0 +1,19 @@
+{
+  "name": "nimmit-brain-api",
+  "version": "1.0.0",
+  "description": "Brain lesson aggregation API — accepts lessons from Nimmit instances, creates PRs to koompi/nimmit-brain",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "deploy:cf": "wrangler deploy",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "hono": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.0",
+    "wrangler": "^4.0.0"
+  }
+}

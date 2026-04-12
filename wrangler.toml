@@ -1,0 +1,10 @@
+name = "nimmit-brain-api"
+main = "src/index.ts"
+compatibility_date = "2026-04-01"
+
+[vars]
+ENVIRONMENT = "production"
+
+# Set these via `wrangler secret put`:
+# GITHUB_TOKEN = "ghp_xxxx" (needs repo access to koompi/nimmit-brain)
+# LESSON_WEBHOOK_SECRET = "random-string"
