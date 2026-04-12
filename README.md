@@ -14,7 +14,7 @@ Brain lesson aggregation API for Nimmit. Accepts lessons from Nimmit instances w
 ## Submit Lessons
 
 ```bash
-curl -X POST https://nimmit.koompi.ai/api/v1/brain/lessons \
+curl -X POST https://brain.nimmit.xyz/api/v1/brain/lessons \
   -H "Content-Type: application/json" \
   -d '{
     "brainVersion": "2.0.0",
