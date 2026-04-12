@@ -1,1 +1,13 @@
-{}
+{
+  "95d4b90f322899ea97a3c7977aa30a4862bb39459d282d3edae65062567691df": {
+    "instanceId": "nimmit-security-test",
+    "brainVersion": "2.1.0",
+    "createdAt": "2026-04-12T09:01:43.981Z",
+    "lessonCount": 0,
+    "weeklyLessonCount": 0,
+    "weeklyResetAt": "2026-04-12T09:01:43.981Z",
+    "lastSubmit": null,
+    "banned": false,
+    "keyHash": "95d4b90f322899ea97a3c7977aa30a4862bb39459d282d3edae65062567691df"
+  }
+}
