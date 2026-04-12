@@ -82,7 +82,7 @@ app.post("/lessons", async (c) => {
       }, 201);
     } catch (err) {
       console.error("GitHub contribution failed:", err);
-      return c.json({ error: "Accepted but GitHub sync failed — will retry" }, 202);
+      return c.json({ error: "GitHub sync failed", details: String(err) }, 500);
     }
   }
 
@@ -142,8 +142,14 @@ async function createGitHubContribution(
   const mainRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/heads/master`, {
     headers: { Authorization: `Bearer ${token}`, "User-Agent": "nimmit-brain-api" },
   });
+  if (!mainRes.ok) {
+    throw new Error(`Failed to fetch master ref: ${mainRes.status} ${await mainRes.text()}`);
+  }
   const mainData = await mainRes.json();
-  const mainSha = mainData.object.sha;
+  const mainSha = mainData.object?.sha;
+  if (!mainSha) {
+    throw new Error(`No SHA in master ref response: ${JSON.stringify(mainData)}`);
+  }
 
   // 2. Create branch
   await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs`, {
