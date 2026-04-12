@@ -25,10 +25,10 @@
     "instanceId": "live-check-1776002627",
     "brainVersion": "2.1.0",
     "createdAt": "2026-04-12T14:03:48.373Z",
-    "lessonCount": 0,
-    "weeklyLessonCount": 0,
-    "weeklyResetAt": "2026-04-12T14:03:48.373Z",
-    "lastSubmit": null,
+    "lessonCount": 1,
+    "weeklyLessonCount": 1,
+    "weeklyResetAt": "2026-04-19T14:04:00.328Z",
+    "lastSubmit": "2026-04-12T14:04:00.328Z",
     "banned": false,
     "keyHash": "2dcfb96c207419a69bf0952e92194a13599d19419fa9c7751542da0f7b1a5a06"
   }
