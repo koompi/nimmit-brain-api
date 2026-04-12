@@ -1,44 +1,36 @@
 import { createMiddleware } from "hono/factory";
 
-type Bindings = {
-  RATE_LIMIT_KV: KVNamespace;
-  GITHUB_TOKEN: string;
-  LESSON_WEBHOOK_SECRET: string;
-  ENVIRONMENT: string;
-};
+// In-memory rate limiter (for Cloudflare Workers, use KV binding in production)
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
-const WINDOW_SEC = 60;
-const MAX_REQUESTS = 10;
+const WINDOW_MS = 60_000; // 1 minute
+const MAX_REQUESTS = 10; // per window
 
-export const rateLimit = createMiddleware<{ Bindings: Bindings }>(async (c, next) => {
-  const kv: KVNamespace | undefined = (c.env as Bindings)?.RATE_LIMIT_KV;
+export const rateLimit = createMiddleware(async (c, next) => {
+  // Rate limit by API key if available, otherwise by IP
+  const authHeader = c.req.header("Authorization");
+  let key: string;
 
-  // Fallback: no KV bound (local dev) — allow through
-  if (!kv) {
+  if (authHeader?.startsWith("Bearer nk_")) {
+    key = `key:${authHeader.replace("Bearer ", "")}`;
+  } else {
+    key = c.req.header("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  }
+
+  const now = Date.now();
+  const entry = rateLimitMap.get(key);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(key, { count: 1, resetAt: now + WINDOW_MS });
     await next();
     return;
   }
 
-  const ip = c.req.header("cf-connecting-ip") // Cloudflare sets this reliably
-    ?? c.req.header("x-forwarded-for")?.split(",")[0]?.trim()
-    ?? "unknown";
-
-  const key = `rl:${ip}`;
-  const raw = await kv.get(key);
-  const count = raw ? parseInt(raw, 10) : 0;
-
-  if (count >= MAX_REQUESTS) {
-    c.header("Retry-After", String(WINDOW_SEC));
+  if (entry.count >= MAX_REQUESTS) {
+    c.header("Retry-After", String(Math.ceil((entry.resetAt - now) / 1000)));
     return c.json({ error: "Rate limited. Try again later." }, 429);
   }
 
-  // Increment; set TTL only on first write so window is fixed, not sliding
-  if (count === 0) {
-    await kv.put(key, "1", { expirationTtl: WINDOW_SEC });
-  } else {
-    // preserve existing TTL by not passing expirationTtl
-    await kv.put(key, String(count + 1));
-  }
-
+  entry.count++;
   await next();
 });

@@ -6,5 +6,5 @@ compatibility_date = "2026-04-01"
 ENVIRONMENT = "production"
 
 # Set these via `wrangler secret put`:
-# GITHUB_TOKEN = "ghp_xxxx" (needs repo access to koompi/nimmit-brain)
+# GITHUB_TOKEN = "ghp_xxxx" (needs repo access to koompi/nimmit-brain + koompi/nimmit-brain-api)
 # LESSON_WEBHOOK_SECRET = "random-string"
