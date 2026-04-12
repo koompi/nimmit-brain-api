@@ -10,15 +10,15 @@
     "banned": false,
     "keyHash": "e2dba52b233e027358915daa6211e502722d1bd1bb006181da7654a5981bfaad"
   },
-  "8e5d23571f561d2e3a2f52640182a213054bf90561920148513daa722ec5ec0d": {
+  "dfdf4bb1519a018940b9cf00c78c605390501fe6e147ab6d8eb7862b223233b4": {
     "instanceId": "nimmit-final-test",
     "brainVersion": "2.1.0",
     "createdAt": "2026-04-12T09:03:14.368Z",
     "lessonCount": 0,
     "weeklyLessonCount": 0,
-    "weeklyResetAt": "2026-04-12T09:03:14.368Z",
+    "weeklyResetAt": "2026-04-12T09:03:16.043Z",
     "lastSubmit": null,
     "banned": false,
-    "keyHash": "8e5d23571f561d2e3a2f52640182a213054bf90561920148513daa722ec5ec0d"
+    "keyHash": "dfdf4bb1519a018940b9cf00c78c605390501fe6e147ab6d8eb7862b223233b4"
   }
 }
