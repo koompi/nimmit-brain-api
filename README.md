@@ -2,7 +2,7 @@
 
 Brain lesson aggregation API for Nimmit. Accepts lessons from Nimmit instances worldwide, creates PRs to `koompi/nimmit-brain`. Zero friction — no GitHub account needed.
 
-**Live at:** https://brain.nimmit.xyz
+**Live at:** https://nimmit.koompi.ai
 
 ## Why
 
@@ -22,7 +22,7 @@ See [koompi/nimmit-brain](https://github.com/koompi/nimmit-brain) for the brain 
 ## Submit Lessons
 
 ```bash
-curl -X POST https://brain.nimmit.xyz/api/v1/brain/lessons \
+curl -X POST https://nimmit.koompi.ai/api/v1/brain/lessons \
   -H "Content-Type: application/json" \
   -d '{
     "brainVersion": "2.1.0",
@@ -142,14 +142,14 @@ echo "ghp_xxx" | CLOUDFLARE_API_TOKEN=xxx bunx wrangler secret put GITHUB_TOKEN
 CLOUDFLARE_API_TOKEN=xxx bunx wrangler deploy
 
 # Add custom domain in Cloudflare dashboard
-# brain.nimmit.xyz → worker
+# nimmit.koompi.ai → worker
 ```
 
 ### KOOMPI Cloud / Self-hosted
 
 1. Set environment variables: `ENVIRONMENT=production`, `GITHUB_TOKEN=ghp_xxx`
 2. Run: `bun run start`
-3. Reverse proxy `brain.nimmit.xyz` → port 3000
+3. Reverse proxy `nimmit.koompi.ai` → port 3000
 
 ### Local Dev
 
