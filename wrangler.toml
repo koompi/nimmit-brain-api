@@ -2,10 +2,6 @@ name = "nimmit-brain-api"
 main = "src/index.ts"
 compatibility_date = "2026-04-01"
 
-[[kv_namespaces]]
-binding = "RATE_LIMIT_KV"
-id = "cec63e00958146acacfa1e0a77a926b4"
-
 [vars]
 ENVIRONMENT = "production"
 

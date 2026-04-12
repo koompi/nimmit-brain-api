@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { lessons } from "./routes/lessons.js";
+import { install } from "./routes/install.js";
 import { rateLimit } from "./middleware/rate-limit.js";
 
 const app = new Hono();
@@ -29,6 +30,7 @@ app.use("/api/v1/*", async (c, next) => {
 
 // Routes
 app.route("/api/v1/brain", lessons);
+app.route("/brain", install);
 
 // Health check
 app.get("/", (c) =>
