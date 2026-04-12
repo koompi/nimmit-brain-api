@@ -14,10 +14,10 @@
     "instanceId": "nimmit-final-test",
     "brainVersion": "2.1.0",
     "createdAt": "2026-04-12T09:03:14.368Z",
-    "lessonCount": 0,
-    "weeklyLessonCount": 0,
-    "weeklyResetAt": "2026-04-12T09:03:16.043Z",
-    "lastSubmit": null,
+    "lessonCount": 1,
+    "weeklyLessonCount": 1,
+    "weeklyResetAt": "2026-04-19T09:03:29.076Z",
+    "lastSubmit": "2026-04-12T09:03:29.076Z",
     "banned": false,
     "keyHash": "dfdf4bb1519a018940b9cf00c78c605390501fe6e147ab6d8eb7862b223233b4"
   }
