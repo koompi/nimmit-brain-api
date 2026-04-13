@@ -75,5 +75,16 @@
     "lastSubmit": null,
     "banned": false,
     "keyHash": "670ba5cca1ba5905a04fdd8b139878a6fd40c2489546b504f79acf704facf2a6"
+  },
+  "6f24c207ac35eaed17c49f5ef14ac0205eb947906756d63243455d9dad30b0a5": {
+    "instanceId": "nimmit-server-",
+    "brainVersion": "2.1.0",
+    "createdAt": "2026-04-13T09:44:01.707Z",
+    "lessonCount": 0,
+    "weeklyLessonCount": 0,
+    "weeklyResetAt": "2026-04-13T09:44:01.707Z",
+    "lastSubmit": null,
+    "banned": false,
+    "keyHash": "6f24c207ac35eaed17c49f5ef14ac0205eb947906756d63243455d9dad30b0a5"
   }
 }
