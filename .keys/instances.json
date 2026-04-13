@@ -130,5 +130,16 @@
     "lastSubmit": null,
     "banned": false,
     "keyHash": "06c33611f35cb068c19b4f727ce44fff5ebe272cf91c1ad08923ff5acfe63412"
+  },
+  "91c3f6a5eb7107a3d5823ef98d3e27bfb5a95941dba1aff0d0e0eaac6aad66ce": {
+    "instanceId": "test-health-check",
+    "brainVersion": "2.1.0",
+    "createdAt": "2026-04-13T15:42:02.933Z",
+    "lessonCount": 0,
+    "weeklyLessonCount": 0,
+    "weeklyResetAt": "2026-04-13T15:42:02.933Z",
+    "lastSubmit": null,
+    "banned": false,
+    "keyHash": "91c3f6a5eb7107a3d5823ef98d3e27bfb5a95941dba1aff0d0e0eaac6aad66ce"
   }
 }
