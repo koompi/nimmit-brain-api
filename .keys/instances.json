@@ -80,10 +80,10 @@
     "instanceId": "nimmit-server-",
     "brainVersion": "2.1.0",
     "createdAt": "2026-04-13T09:44:01.707Z",
-    "lessonCount": 3,
-    "weeklyLessonCount": 3,
+    "lessonCount": 6,
+    "weeklyLessonCount": 6,
     "weeklyResetAt": "2026-04-20T15:48:38.572Z",
-    "lastSubmit": "2026-04-13T15:48:38.572Z",
+    "lastSubmit": "2026-04-13T15:49:06.514Z",
     "banned": false,
     "keyHash": "6f24c207ac35eaed17c49f5ef14ac0205eb947906756d63243455d9dad30b0a5"
   },
