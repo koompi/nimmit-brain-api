@@ -108,5 +108,16 @@
     "lastSubmit": null,
     "banned": false,
     "keyHash": "22babd667b2c82d9ac38f42df19754805618c23961609d26eccfb1a8263d4b31"
+  },
+  "fd0ba5befc7e9ca4ef511a450a5e699ac6fa93e43c5808d11ffe4d96fde64e82": {
+    "instanceId": "koompi-dev-rithy-laptop",
+    "brainVersion": "2.1.0",
+    "createdAt": "2026-04-13T09:46:33.297Z",
+    "lessonCount": 0,
+    "weeklyLessonCount": 0,
+    "weeklyResetAt": "2026-04-13T09:46:33.297Z",
+    "lastSubmit": null,
+    "banned": false,
+    "keyHash": "fd0ba5befc7e9ca4ef511a450a5e699ac6fa93e43c5808d11ffe4d96fde64e82"
   }
 }
