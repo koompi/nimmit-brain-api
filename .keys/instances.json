@@ -64,5 +64,16 @@
     "lastSubmit": null,
     "banned": false,
     "keyHash": "41adbeed986e0bcd795811fc513d9b993c1355f710e6e384cd36e9b69a90e999"
+  },
+  "670ba5cca1ba5905a04fdd8b139878a6fd40c2489546b504f79acf704facf2a6": {
+    "instanceId": "senagents-001",
+    "brainVersion": "2.1.0",
+    "createdAt": "2026-04-13T09:40:10.309Z",
+    "lessonCount": 0,
+    "weeklyLessonCount": 0,
+    "weeklyResetAt": "2026-04-13T09:40:10.309Z",
+    "lastSubmit": null,
+    "banned": false,
+    "keyHash": "670ba5cca1ba5905a04fdd8b139878a6fd40c2489546b504f79acf704facf2a6"
   }
 }
