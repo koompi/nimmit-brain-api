@@ -42,5 +42,16 @@
     "lastSubmit": null,
     "banned": false,
     "keyHash": "6c6f2557a6dafe8daed0da945dd332bed1d03fb57ec5a5ea784306b54bed119d"
+  },
+  "85d5582a854df209acac346c92751f762362ca5e83a23c55dfa40b6bf32d4064": {
+    "instanceId": "sila-assistant-1776073023",
+    "brainVersion": "2.1.0",
+    "createdAt": "2026-04-13T09:37:03.647Z",
+    "lessonCount": 0,
+    "weeklyLessonCount": 0,
+    "weeklyResetAt": "2026-04-13T09:37:03.647Z",
+    "lastSubmit": null,
+    "banned": false,
+    "keyHash": "85d5582a854df209acac346c92751f762362ca5e83a23c55dfa40b6bf32d4064"
   }
 }
