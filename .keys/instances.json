@@ -53,5 +53,16 @@
     "lastSubmit": null,
     "banned": false,
     "keyHash": "85d5582a854df209acac346c92751f762362ca5e83a23c55dfa40b6bf32d4064"
+  },
+  "41adbeed986e0bcd795811fc513d9b993c1355f710e6e384cd36e9b69a90e999": {
+    "instanceId": "-1776073203",
+    "brainVersion": "2.1.0",
+    "createdAt": "2026-04-13T09:40:04.168Z",
+    "lessonCount": 0,
+    "weeklyLessonCount": 0,
+    "weeklyResetAt": "2026-04-13T09:40:04.168Z",
+    "lastSubmit": null,
+    "banned": false,
+    "keyHash": "41adbeed986e0bcd795811fc513d9b993c1355f710e6e384cd36e9b69a90e999"
   }
 }
