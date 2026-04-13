@@ -329,28 +329,32 @@ app.get("/lessons", async (c) => {
 // ---- Fetch approved lessons ----
 
 async function fetchApprovedLessons(token: string, since?: string) {
+  const activeDirs = ["brain/memory/procedural", "brain/memory/semantic", "brain/memory/failures", "brain/memory/workflow"];
   const sinceParam = since ? `&since=${encodeURIComponent(since)}` : "";
-  const res = await fetch(
-    `https://api.github.com/repos/koompi/nimmit-brain/commits?path=brain/memory/procedural,brain/memory/semantic,brain/memory/failures,brain/memory/workflow&per_page=10${sinceParam}`,
-    { headers: { Authorization: `Bearer ${token}`, "User-Agent": "nimmit-brain-api" } }
-  );
-  const commits = await res.json();
+  const seen = new Set<string>();
   const lessons: any[] = [];
-  for (const commit of commits.slice(0, 5)) {
-    for (const file of commit.files || []) {
-      if (file.filename.includes("/incoming/")) continue;
-      if (!file.filename.startsWith("brain/memory/")) continue;
-      if (!file.filename.endsWith(".md")) continue;
-      const cRes = await fetch(
-        `https://api.github.com/repos/koompi/nimmit-brain/contents/${file.filename}`,
-        { headers: { Authorization: `Bearer ${token}`, "User-Agent": "nimmit-brain-api" } }
-      );
-      if (cRes.ok) {
-        const data = await cRes.json();
-        lessons.push({ path: file.filename, content: atob(data.content.replace(/\n/g, "")), date: commit.commit.author.date });
-      }
+
+  for (const dir of activeDirs) {
+    const res = await fetch(
+      `https://api.github.com/repos/koompi/nimmit-brain/contents/${dir}`,
+      { headers: { Authorization: `Bearer ${token}`, "User-Agent": "nimmit-brain-api" } }
+    );
+    if (!res.ok) continue;
+    const files = await res.json();
+    if (!Array.isArray(files)) continue;
+
+    for (const file of files) {
+      if (!file.name.endsWith(".md")) continue;
+      if (seen.has(file.name)) continue;
+      seen.add(file.name);
+
+      const cRes = await fetch(file.download_url);
+      if (!cRes.ok) continue;
+      const content = await cRes.text();
+      lessons.push({ path: `${dir}/${file.name}`, content, date: "" });
     }
   }
+
   return lessons;
 }
 
