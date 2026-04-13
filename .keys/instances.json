@@ -119,5 +119,16 @@
     "lastSubmit": null,
     "banned": false,
     "keyHash": "fd0ba5befc7e9ca4ef511a450a5e699ac6fa93e43c5808d11ffe4d96fde64e82"
+  },
+  "06c33611f35cb068c19b4f727ce44fff5ebe272cf91c1ad08923ff5acfe63412": {
+    "instanceId": "prahok-nady",
+    "brainVersion": "2.1.0",
+    "createdAt": "2026-04-13T13:06:14.548Z",
+    "lessonCount": 0,
+    "weeklyLessonCount": 0,
+    "weeklyResetAt": "2026-04-13T13:06:14.548Z",
+    "lastSubmit": null,
+    "banned": false,
+    "keyHash": "06c33611f35cb068c19b4f727ce44fff5ebe272cf91c1ad08923ff5acfe63412"
   }
 }
